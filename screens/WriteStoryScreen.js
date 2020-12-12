@@ -1,9 +1,31 @@
 import * as React from "react";
 import {View,Text,TextInput,TouchableOpacity,StyleSheet} from "react-native";
 import {Header} from "react-native-elements"; 
+import db from "../config";
+import firebase from "firebase";
 
 
 export default class WriteStoryScreen extends React.Component{
+    constructor(){
+        super();
+        this.state={
+            title:"",
+            author:"",
+            story:""
+        }
+    }
+    submitStory=()=>{
+        db.collection("stories").add({
+            title:this.state.title,
+            author:this.state.author,
+            story:this.state.story
+        })
+        this.setState({
+            title:"",
+            author:"",
+            story:""
+        })
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -12,16 +34,23 @@ export default class WriteStoryScreen extends React.Component{
                     centerComponent={{text:"Write Story", style:{fontWeight:"bold",fontSize:20,color:"white",justifyContent:"center"}}}/>
                 <TextInput 
                     style={styles.inputBox}
-                    placeholder={"title"}/>
+                    placeholder={"title"}
+                    onChangeText={(text)=>{this.setState({title:text})}}
+                    />
                 <TextInput 
                     style={styles.inputBox}
-                    placeholder={"author"}/>
+                    placeholder={"author"}
+                    onChangeText={(text)=>{this.setState({author:text})}}
+                    />
                 <TextInput 
                     placeholder={"Write your story"}
                     multiline
                     style={[styles.inputBox,{height:200}]}
+                    onChangeText={(text)=>{this.setState({story:text})}}
                     />
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={()=>{this.submitStory()}}>
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
                 
