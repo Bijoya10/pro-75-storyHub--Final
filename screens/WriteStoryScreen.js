@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         width:"80%",
         height:50,
         textAlign:"center",
-        borderWidth:0.5
+        borderWidth:0.5,
+        borderColor:"green"
     },
     button:{
         marginTop:20,

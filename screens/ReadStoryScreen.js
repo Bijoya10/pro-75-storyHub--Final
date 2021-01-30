@@ -71,30 +71,29 @@ export default class ReadStoryScreen extends React.Component{
                          this.state.search.length!==0?   
                         (
                         <FlatList
-                        data={this.state.allSearchStories}
-                        renderItem={({item})=>{
-                            return(
-                                <View style={{borderBottomWidth:2}}>
-                                    <Text>{item.title}</Text>
-                                    <Text>{item.author}</Text>
-                                </View>
-                            )
-                        }}
-                        keyExtractor={(item, index)=> index.toString()}
+                            data={this.state.allSearchStories}
+                            renderItem={({item})=>{
+                                return(
+                                    <View style={{borderBottomWidth:3,borderBottomColor:"grey",marginVertical:10}}>
+                                        <Text style={{fontWeight:"bold",fontSize:20}}>{"Title : "+item.title}</Text>
+                                        <Text style={{color:"grey"}}>{"Author : "+item.author}</Text>
+                                    </View>
+                                )
+                            }}
+                            keyExtractor={(item, index)=> index.toString()}
                         />
                         ):(
                         <FlatList
-                    
-                        data={this.state.stories}
-                        renderItem={({item})=>{
-                            return(
-                                <View style={{borderBottomWidth:2}}>
-                                    <Text>{item.title}</Text>
-                                    <Text>{item.author}</Text>
-                                </View>
-                            )
-                        }}
-                        keyExtractor={(item, index)=> index.toString()}
+                            data={this.state.stories}
+                            renderItem={({item})=>{
+                                return(
+                                    <View style={{borderBottomWidth:3,borderBottomColor:"grey",marginTop:10}}>
+                                        <Text style={{fontWeight:"bold",fontSize:20}}>{"Title :"+item.title}</Text>
+                                        <Text style={{color:"grey"}}>{"Author : "+item.author}</Text>
+                                    </View>
+                                )
+                            }}
+                            keyExtractor={(item, index)=> index.toString()}
                         />)
                         
                         

@@ -2,13 +2,13 @@ import firebase from "firebase";
 require("@firebase/firestore");
 
 var firebaseConfig = {
-    apiKey: "AIzaSyC_MQ-grRJ1VYm-atMJ2zMmsyMGbkvuin8",
-    authDomain: "storyhub-eb9f4.firebaseapp.com",
-    projectId: "storyhub-eb9f4",
-    storageBucket: "storyhub-eb9f4.appspot.com",
-    messagingSenderId: "844406387649",
-    appId: "1:844406387649:web:340041247a729bc329f540"
-  };
+  apiKey: "AIzaSyCN75lVC3-QoW4Ogg-rMHUF1cYOR1ZqTdo",
+  authDomain: "storyhub-2212f.firebaseapp.com",
+  projectId: "storyhub-2212f",
+  storageBucket: "storyhub-2212f.appspot.com",
+  messagingSenderId: "425030955601",
+  appId: "1:425030955601:web:1d6fd346d6cfc747affe70"
+};
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
